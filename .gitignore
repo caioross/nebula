@@ -1,0 +1,73 @@
+# Build output
+/target/
+/dist/
+/build/
+*.o
+*.obj
+*.exe
+*.pdb
+
+# Dependency caches
+/node_modules/
+Cargo.lock.orig
+.cache/
+
+# Model weights and large binaries (never committed; fetched at runtime)
+*.gguf
+*.safetensors
+*.bin
+*.onnx
+/models/
+
+# Private working area — planning notes, drafts, local tooling.
+# Nothing under these paths is part of the public project.
+/internal/
+/notes/
+/scratch/
+*.local.md
+*.draft.md
+
+# Local assistant configuration and state
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+.claude-*
+AGENTS.md
+.agents/
+.agent/
+.mcp.json
+.mcp/
+.codex/
+.gemini/
+GEMINI.md
+.cursor/
+.cursorrules
+.cursorignore
+.windsurfrules
+.windsurf/
+.aider*
+.continue/
+.copilot/
+copilot-instructions.md
+llms.txt
+llms-full.txt
+*.transcript.md
+*.session.json
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temp
+*.log
+*.tmp
+.env
+.env.*

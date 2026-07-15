@@ -37,7 +37,7 @@ A typed, in-process message bus plus the session state machine. Messages are enu
 
 The router answers one question — *what kind of thing did the user just write?* — cheaply, locally, and fast enough to be invisible. It is deterministic first, statistical second, generative never. Full specification in [routing.md](routing.md).
 
-Output is an `Intent` value: `Navigate(url)`, `Command(verb, args)`, `Task(class, context_refs)`, `Message(target)` or `Ambiguous(candidates)`. Ambiguity is resolved by asking the user in one short sentence, never by guessing between destructive alternatives.
+Output is an `Intent` value — one of `Navigate(url)`, `Command(verb, args)`, `Task(class, context_refs)`, `Message(target, body?)`, `Continuation(turn_ref)` or `Ambiguous(candidates)`. routing.md defines this set and is authoritative; the enum above is just the overview. Ambiguity is resolved by asking the user in one short sentence, never by guessing between destructive alternatives.
 
 ## Orchestrator
 

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" font-family="Inter, 'Segoe UI', system-ui, sans-serif">
+  <title>Cloud state: Delivering</title>
+  <desc>The response fades in below over 200–400 ms while the cloud's text condenses back to rest. The user's words from that turn shrink and rise into the turn history, reachable by scrolling up within the cloud region, leaving the field clear for the next thought. Where the response passes under the cloud it is veiled by a soft gradient, never an opaque bar.</desc>
+
+  <defs>
+    <linearGradient id="veilLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8f8f7" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#f8f8f7" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="veilDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#121214" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#121214" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- light -->
+  <text x="28" y="20" fill="#9a9a97" font-size="11" letter-spacing="0.08em">LIGHT</text>
+  <rect x="28" y="28" width="392" height="340" rx="12" fill="#f8f8f7" stroke="#ececeb"/>
+  <!-- user's turn, shrunk and risen into history -->
+  <text x="70" y="62" fill="#adada8" font-size="12" font-family="'Iowan Old Style', Palatino, Georgia, serif">translate this page into plain English</text>
+  <!-- response, faded in, anchored under the words -->
+  <text x="70" y="108" fill="#2c2c2a" font-size="15" font-family="'Iowan Old Style', Palatino, Georgia, serif">The page explains how to reset your</text>
+  <text x="70" y="132" fill="#2c2c2a" font-size="15" font-family="'Iowan Old Style', Palatino, Georgia, serif">password: request a link by email, open</text>
+  <text x="70" y="156" fill="#2c2c2a" font-size="15" font-family="'Iowan Old Style', Palatino, Georgia, serif">it, and choose a new one.</text>
+  <!-- soft veil where content passes under the cloud region -->
+  <rect x="29" y="70" width="390" height="26" fill="url(#veilLight)"/>
+
+  <!-- dark -->
+  <text x="480" y="20" fill="#5c5c62" font-size="11" letter-spacing="0.08em">DARK</text>
+  <rect x="480" y="28" width="392" height="340" rx="12" fill="#121214" stroke="#202024"/>
+  <text x="522" y="62" fill="#55555a" font-size="12" font-family="'Iowan Old Style', Palatino, Georgia, serif">translate this page into plain English</text>
+  <text x="522" y="108" fill="#eeeeea" font-size="15" font-family="'Iowan Old Style', Palatino, Georgia, serif">The page explains how to reset your</text>
+  <text x="522" y="132" fill="#eeeeea" font-size="15" font-family="'Iowan Old Style', Palatino, Georgia, serif">password: request a link by email, open</text>
+  <text x="522" y="156" fill="#eeeeea" font-size="15" font-family="'Iowan Old Style', Palatino, Georgia, serif">it, and choose a new one.</text>
+  <rect x="481" y="70" width="390" height="26" fill="url(#veilDark)"/>
+
+  <!-- caption -->
+  <text x="28" y="406" fill="#3a3a38" font-size="15" font-weight="600">Delivering</text>
+  <text x="28" y="428" fill="#77776f" font-size="13">Response fades in over 200–400 ms, anchored under the words that caused it. The turn shrinks and rises into history; the field clears.</text>
+  <text x="28" y="452" fill="#9a9a94" font-size="12" font-style="italic">Announced: the response is read on arrival; the prior turn moves to history, still reachable by scrolling the cloud.</text>
+</svg>

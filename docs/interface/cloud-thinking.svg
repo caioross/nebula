@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" font-family="Inter, 'Segoe UI', system-ui, sans-serif">
+  <title>Cloud state: Thinking</title>
+  <desc>Input has been dispatched. The written text loosens: letter spacing eases apart a few percent and opacity drops toward 70%. A slow luminous drift moves through the cloud region, like light through fog. It reads as alive and working from across a room and never loops visibly. If the router resolved the input in milliseconds, this state is skipped entirely. No spinners, no progress bars.</desc>
+
+  <defs>
+    <radialGradient id="driftLight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5b5fd6" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#5b5fd6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="driftDark" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9aa0ff" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#9aa0ff" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="clipLight"><rect x="28" y="28" width="392" height="300" rx="12"/></clipPath>
+    <clipPath id="clipDark"><rect x="480" y="28" width="392" height="300" rx="12"/></clipPath>
+  </defs>
+
+  <!-- light -->
+  <text x="28" y="20" fill="#9a9a97" font-size="11" letter-spacing="0.08em">LIGHT</text>
+  <rect x="28" y="28" width="392" height="300" rx="12" fill="#f8f8f7" stroke="#ececeb"/>
+  <g clip-path="url(#clipLight)">
+    <ellipse cx="150" cy="82" rx="150" ry="70" fill="url(#driftLight)">
+      <animate attributeName="cx" values="120;330;120" dur="6.2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="78;92;78" dur="7.7s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  <text x="70" y="90" fill="#2c2c2a" opacity="0.7" font-size="18" letter-spacing="0.06em" font-family="'Iowan Old Style', Palatino, Georgia, serif">translate this page into plain English</text>
+
+  <!-- dark -->
+  <text x="480" y="20" fill="#5c5c62" font-size="11" letter-spacing="0.08em">DARK</text>
+  <rect x="480" y="28" width="392" height="300" rx="12" fill="#121214" stroke="#202024"/>
+  <g clip-path="url(#clipDark)">
+    <ellipse cx="602" cy="82" rx="150" ry="70" fill="url(#driftDark)">
+      <animate attributeName="cx" values="572;782;572" dur="6.2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="78;92;78" dur="7.7s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  <text x="522" y="90" fill="#eeeeea" opacity="0.7" font-size="18" letter-spacing="0.06em" font-family="'Iowan Old Style', Palatino, Georgia, serif">translate this page into plain English</text>
+
+  <!-- caption -->
+  <text x="28" y="366" fill="#3a3a38" font-size="15" font-weight="600">Thinking</text>
+  <text x="28" y="388" fill="#77776f" font-size="13">Text loosens to ~70% opacity; a luminous drift crosses the cloud, its intensity tracking real work. Skipped if the answer is instant.</text>
+  <text x="28" y="412" fill="#9a9a94" font-size="12" font-style="italic">Announced once: “Working.” Under reduced motion the drift is dropped, the word remains.</text>
+</svg>

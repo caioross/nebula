@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" font-family="Inter, 'Segoe UI', system-ui, sans-serif">
+  <title>Cloud state: Resting</title>
+  <desc>Empty surface. The caret sits at the top, already focused, breathing on a slow 3–4 second opacity cycle. On first launch a single line of small text, "write anything", sits beneath the caret and fades forever after the first keystroke. Shown in light and dark; both are designed together, not inverted from one another.</desc>
+
+  <!-- light -->
+  <text x="28" y="20" fill="#9a9a97" font-size="11" letter-spacing="0.08em">LIGHT</text>
+  <rect x="28" y="28" width="392" height="300" rx="12" fill="#f8f8f7" stroke="#ececeb"/>
+  <!-- faint spec guide: resting cloud occupies ~top tenth -->
+  <line x1="28" y1="88" x2="420" y2="88" stroke="#d9d9d6" stroke-width="1" stroke-dasharray="2 5"/>
+  <text x="412" y="84" text-anchor="end" fill="#c2c2be" font-size="9">cloud · top ~1/10</text>
+  <!-- caret -->
+  <line x1="70" y1="52" x2="70" y2="78" stroke="#3a3a38" stroke-width="2">
+    <animate attributeName="opacity" values="1;0.2;1" dur="3.5s" repeatCount="indefinite"/>
+  </line>
+  <!-- first-launch hint (reading register, muted) -->
+  <text x="70" y="112" fill="#b6b6b1" font-size="15" font-family="'Iowan Old Style', Palatino, Georgia, serif" font-style="italic">write anything</text>
+
+  <!-- dark -->
+  <text x="480" y="20" fill="#5c5c62" font-size="11" letter-spacing="0.08em">DARK</text>
+  <rect x="480" y="28" width="392" height="300" rx="12" fill="#121214" stroke="#202024"/>
+  <line x1="480" y1="88" x2="872" y2="88" stroke="#2a2a2e" stroke-width="1" stroke-dasharray="2 5"/>
+  <text x="864" y="84" text-anchor="end" fill="#3a3a3f" font-size="9">cloud · top ~1/10</text>
+  <line x1="522" y1="52" x2="522" y2="78" stroke="#d7d7d4" stroke-width="2">
+    <animate attributeName="opacity" values="1;0.2;1" dur="3.5s" repeatCount="indefinite"/>
+  </line>
+  <text x="522" y="112" fill="#4c4c50" font-size="15" font-family="'Iowan Old Style', Palatino, Georgia, serif" font-style="italic">write anything</text>
+
+  <!-- caption -->
+  <text x="28" y="366" fill="#3a3a38" font-size="15" font-weight="600">Resting</text>
+  <text x="28" y="388" fill="#77776f" font-size="13">Caret focused from the first frame, breathing on a 3–4 s cycle. The hint never returns once typing begins.</text>
+  <text x="28" y="412" fill="#9a9a94" font-size="12" font-style="italic">Announced: “Nebula. Ready. Type to begin.”</text>
+</svg>

@@ -1,6 +1,6 @@
 # Interface
 
-Status: draft — sketches to be attached before this is marked stable · This document specifies observable behavior. Implementation details (shaders, easing curves as code) come with M1.
+Status: draft · The cloud-state sketches are attached ([docs/interface/](interface/)); the remaining gates before stable are the veil gradient curve and the transition timings expressed as code. This document specifies observable behavior. Implementation details (shaders, easing curves as code) come with M1.
 
 ## One surface
 
@@ -24,6 +24,8 @@ The cloud is the only animated actor in the interface, and its motion is the ent
 **Thinking.** Input has been dispatched. The written text loosens — letter spacing eases apart a few percent, opacity drops toward 70% — and a slow luminous drift moves through the cloud region, like light through fog. The effect must read as *alive, working* from across a room, and must never loop visibly. Duration honesty matters: the drift's intensity tracks actual work, and if the router resolved the input in milliseconds, thinking may be skipped entirely. No spinners, no progress bars, no percentage lies.
 
 **Delivering.** The response fades in below over 200–400 ms while the cloud's text condenses back to rest. The user's words from that turn shrink and rise into the turn history — reachable by scrolling up within the cloud region — leaving the field clear for the next thought.
+
+Each state has a sketch in [docs/interface/](interface/), drawn in light and dark on the same sheet so neither appearance is read as an inversion of the other: [resting](interface/cloud-resting.svg), [receiving](interface/cloud-receiving.svg), [thinking](interface/cloud-thinking.svg), [delivering](interface/cloud-delivering.svg). The sketches carry the announced-state text alongside the visual, since the two are specified together.
 
 ## Motion rules
 

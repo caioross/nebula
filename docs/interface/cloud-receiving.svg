@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" font-family="Inter, 'Segoe UI', system-ui, sans-serif">
+  <title>Cloud state: Receiving</title>
+  <desc>The user is typing. Text renders instantly and the field grows downward line by line. Earlier lines compress slightly so the newest words stay largest. Nothing else on the surface moves while the user types.</desc>
+
+  <!-- light -->
+  <text x="28" y="20" fill="#9a9a97" font-size="11" letter-spacing="0.08em">LIGHT</text>
+  <rect x="28" y="28" width="392" height="300" rx="12" fill="#f8f8f7" stroke="#ececeb"/>
+  <!-- earlier line, compressed -->
+  <text x="70" y="72" fill="#5a5a56" font-size="15" font-family="'Iowan Old Style', Palatino, Georgia, serif">translate this page</text>
+  <!-- newest line, largest, with caret -->
+  <text x="70" y="104" fill="#2c2c2a" font-size="20" font-family="'Iowan Old Style', Palatino, Georgia, serif">into plain English</text>
+  <line x1="258" y1="88" x2="258" y2="110" stroke="#3a3a38" stroke-width="2"/>
+
+  <!-- dark -->
+  <text x="480" y="20" fill="#5c5c62" font-size="11" letter-spacing="0.08em">DARK</text>
+  <rect x="480" y="28" width="392" height="300" rx="12" fill="#121214" stroke="#202024"/>
+  <text x="522" y="72" fill="#a6a6a2" font-size="15" font-family="'Iowan Old Style', Palatino, Georgia, serif">translate this page</text>
+  <text x="522" y="104" fill="#eeeeea" font-size="20" font-family="'Iowan Old Style', Palatino, Georgia, serif">into plain English</text>
+  <line x1="710" y1="88" x2="710" y2="110" stroke="#d7d7d4" stroke-width="2"/>
+
+  <!-- caption -->
+  <text x="28" y="366" fill="#3a3a38" font-size="15" font-weight="600">Receiving</text>
+  <text x="28" y="388" fill="#77776f" font-size="13">Field grows down; older lines shrink a step so the newest words read largest. The rest of the surface holds still.</text>
+  <text x="28" y="412" fill="#9a9a94" font-size="12" font-style="italic">Announced: live text region — each line spoken as entered; no separate status.</text>
+</svg>

@@ -14,7 +14,7 @@ Every connector implements the same internal trait against the spine:
 
 - **Establish** — from a sentence ("connect my WhatsApp") to a working session, with every step narrated in words on the canvas. State machines with retries; a connector that can't connect says why in a sentence, not with a code.
 - **Receive** — inbound events normalized to a common shape (sender, conversation, body, attachments, timestamps) and published to the spine. The canvas decides presentation; connectors never draw.
-- **Send** — outbound actions accepted only through the spine's confirmed-action path. Anything leaving the machine through a connector passes the same confirmation discipline as page actions ([web-engine.md](web-engine.md#reading-without-obeying), layer 2) when foreign content influenced it.
+- **Send** — outbound actions accepted only through the spine's confirmed-action path. Anything leaving the machine through a connector is externally visible by definition, so every send confirms first under the same discipline as page actions ([web-engine.md](web-engine.md#reading-without-obeying), layer 2); foreign content in the conversation only adds a second reason to.
 - **Health** — a connector knows its own state (connected, degraded, expired) and reports transitions as plain sentences, at most once per transition. "Your WhatsApp session expired — say 'reconnect WhatsApp' when you want it back."
 - **Remove** — erasure on request, complete: session keys, message cache, everything, journaled as erased.
 

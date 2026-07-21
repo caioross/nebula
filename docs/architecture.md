@@ -86,7 +86,7 @@ Windows, macOS and Linux from M1, one codebase, native windowing per platform be
 
 ## Open questions
 
-Tracked as issues with the `architecture` label; the significant ones as of this revision:
+Recorded here until they sharpen into tracker issues; the significant ones as of this revision:
 
 1. Whether the journal should be append-only with periodic compaction or a normal database with history tables — bears on "forget me" guarantees.
 2. Whether connectors run in the main process or in a sandboxed child process per connector. Isolation argues for children; the WhatsApp session model may force the decision.

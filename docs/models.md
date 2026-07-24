@@ -34,7 +34,7 @@ Latency discipline: the selected engine must begin streaming within a class-spec
 "Connect my OpenAI key: sk-..." — one sentence, and the flow it triggers is fully specified:
 
 1. The router's Stage 1 recognizes the key shape and diverts it *before* journaling; the key never enters history, model context or logs, and the canvas immediately re-renders the turn with the key masked.
-2. The orchestrator validates the key with a minimal probe call, reports success or failure in one sentence, and stores the credential encrypted in the vault.
+2. The orchestrator validates the key with a minimal probe call, reports success or failure in one sentence, and stores the credential encrypted in the vault. On a machine with no keychain running, this is the point where the vault asks how to protect it, once, and takes "don't store it" for an answer. The first rule in [architecture.md](architecture.md#vault) says why the question waits until here.
 3. The provider's models enter the policy table as engines with their measured latencies and the provider's published capabilities. They win selections where they're genuinely better for the task class — or where the user has said so.
 
 Same sentence-level flow for removal ("remove my OpenAI key" — confirmed, erased, verified erased) and for local additions: "get me a better coding model" may fetch a vetted alternative from the manifest over the network, with one confirmation because it downloads gigabytes.

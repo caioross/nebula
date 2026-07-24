@@ -68,9 +68,13 @@ nebula/
 
 Rules the vault enforces regardless of which subsystem is writing:
 
-1. Credentials are encrypted with a key held by the OS keychain where one exists; they never appear in the journal, in model context, or in any log, and the recognizer that detects "this looks like a key" runs before journaling, not after.
+1. Credentials are encrypted with a key held by the OS keychain where one is running, and with a passphrase-derived key where none is; they never appear in the journal, in model context, or in any log, and the recognizer that detects "this looks like a key" runs before journaling, not after. No key ever ships inside the binary.
 2. Nothing under `nebula/` is ever transmitted except as an explicit part of a user-requested action, and the journal records what was sent, where, when.
 3. The user can say "forget what I told you about X" or "delete everything" and the corresponding erasure is real, including embeddings.
+
+The keychain-less branch is Linux in practice, and it is where most desktop software quietly gives up: the common fallback is AES under a password compiled into the executable, which leaves a rule like the one above readable as a guarantee while making it untrue. Nebula asks instead, once, at the moment the first credential would be written. Not at startup, because a fresh install has an empty `credentials/` and can stay that way indefinitely, so nothing needs protecting until the user hands over a secret, and by then there is a conversation with room for one more sentence. Two honest answers fit in it: derive a key from a passphrase, unlocked once per session, or decline to store the credential and re-enter it when it is needed. The vault records which of the three modes is in force, so "what is protecting my keys?" is answerable in a sentence like everything else.
+
+What a keychain buys is not the same on every platform, and rule 1 should not be read as one uniform promise. macOS binds items to the requesting binary and Windows DPAPI binds them to the user account. The Secret Service binds them to the session and offers no isolation between processes running as that user, which gnome-keyring treats as a deliberate position rather than a gap, so on Linux a running keychain protects credentials against another user of the machine and against the disk, not against other software the user is already running. [SECURITY.md](../SECURITY.md) hedges threat 2 with "to the extent the platform allows". That is what the phrase costs, platform by platform.
 
 ## Concurrency model
 
@@ -90,4 +94,3 @@ Recorded here until they sharpen into tracker issues; the significant ones as of
 
 1. Whether the journal should be append-only with periodic compaction or a normal database with history tables — bears on "forget me" guarantees.
 2. Whether connectors run in the main process or in a sandboxed child process per connector. Isolation argues for children; the WhatsApp session model may force the decision.
-3. How much of the vault's encryption story is portable to Linux setups without a keychain daemon.

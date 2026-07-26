@@ -51,6 +51,6 @@ Local inference runs on an embedded engine linked into the binary — llama.cpp-
 
 ## Open questions
 
-1. Whether the Everyday tier should be one generalist or a pair (chat-tuned + instruction-tuned) selected by task class — doubles warm memory, measurably better output; needs the M2 benchmark data.
-2. Embedding model choice for memory and reference resolution, and whether Pilot can share it.
+1. Whether the Everyday tier should be one generalist or a pair (chat-tuned + instruction-tuned) selected by task class. Doubles warm memory, measurably better output. Decided at M2 by the runtime spike, which already measures memory under load and cold-load time for this tier; running the tier twice, once per shape, is the whole experiment.
+2. Embedding model choice for memory and reference resolution, and whether Pilot can share it. Also M2, and the deciding number is CPU embedding latency on the 8 GB machine — so the spike in [ADR-0004](decisions/0004-inference-runtime.md) measures that alongside its generation metrics.
 3. Redistribution logistics: hosting multi-gigabyte weights for every release is a real cost — mirror strategy (torrents? HF as canonical with project checksums?) needs deciding before M2 exit.

@@ -89,5 +89,5 @@ Windows, macOS and Linux from M1, one codebase, native windowing per platform be
 Recorded here until they sharpen into tracker issues; the significant ones as of this revision:
 
 1. Whether the journal should be append-only with periodic compaction or a normal database with history tables — bears on "forget me" guarantees.
-2. Whether connectors run in the main process or in a sandboxed child process per connector. Isolation argues for children; the WhatsApp session model may force the decision.
+2. Whether connectors run in the main process or in a sandboxed child process per connector. Isolation argues for children. Deliberately left to M4 and coupled to [ADR-0005](decisions/0005-whatsapp-strategy.md): a protocol needing a long-lived session with its own storage decides this on its own, so choosing before the connector strategy is settled would be guessing at the constraint.
 3. How much of the vault's encryption story is portable to Linux setups without a keychain daemon.

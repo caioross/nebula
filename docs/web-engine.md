@@ -41,6 +41,6 @@ Nebula keeps per-site state (cookies, local storage) in the vault, partitioned b
 
 ## Open questions
 
-1. Servo's embedding API surface is still moving; the `PageEngine` trait needs to be designed against a pinned Servo revision early in M3, with an upgrade cadence decision.
-2. How much JavaScript-driven app interactivity (docs editors, dashboards) is inside the compatibility target for M3 versus explicitly deferred — needs the reference page set to be concrete.
+1. Servo's embedding API surface is still moving, so the `PageEngine` trait gets designed against a pinned revision early in M3 and the upgrade cadence is decided there too. That second half is narrower than it was: Servo now publishes an LTS line with stated backport and migration windows, which turns an open field into one candidate to accept or reject against the cadence [ADR-0003](decisions/0003-web-engine.md) promised.
+2. How much JavaScript-driven app interactivity (docs editors, dashboards) is inside the compatibility target for M3 versus explicitly deferred. The reference page set answers this by construction: what the set contains is what the target is. So the work here is assembling that set, which nobody has started.
 3. Whether the structural read should also power a reader mode ("just show me the article") in M3 for free, since the data is already there. Likely yes; needs an interface-spec addendum for how it's asked for and rendered.

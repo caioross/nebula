@@ -62,6 +62,6 @@ The router improves per user, on device only. Corrections are the signal: when t
 
 ## Open questions
 
-1. Whether Stage 2's model is one multilingual classifier or per-language heads behind a language detector — memory vs. accuracy trade, needs measurement.
+1. Whether Stage 2's model is one multilingual classifier or per-language heads behind a language detector. Memory against accuracy, and an argument nobody can win from an armchair, so it waits for M2: the published evaluation set gives per-language accuracy for both shapes and resident memory is measurable in the same sitting.
 2. Where the Continuation threshold sits. The rule in Stage 2 is deterministic about when a Continuation is even available; whether a given input can stand alone is still the classifier's call, and the number to measure is the false-continuation rate over pairs of identical words, one with an addressable turn behind them and one without.
 3. Whether the command lexicon should accept user-taught synonyms ("when I say 'kill it' I mean stop") in v1 or defer personal vocabulary to the memory system.

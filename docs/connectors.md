@@ -32,6 +32,6 @@ Connectors are where attention-stealing enters a product, so the rules are stric
 
 ## Open questions
 
-1. The WhatsApp strategy ADR (above) — the largest unresolved external-dependency risk in the project.
-2. Attachment handling: images and documents arriving through messages intersect with file handling and with foreign-content rules; needs a joint spec with the memory/file design.
-3. Whether conversation history from connectors enters long-term memory by default or only by request. Privacy instinct says by request; usefulness says default. Needs user testing with the actual audience.
+1. The WhatsApp strategy ADR (above), still the largest unresolved external-dependency risk in the project. It resolves at M4, where [ADR-0005](decisions/0005-whatsapp-strategy.md) is due before planning closes. The risk has a floor under it in the meantime: that ADR already specifies the Telegram fallback for the case where no WhatsApp path turns out to be responsible enough to ship.
+2. Attachment handling: images and documents arriving through messages intersect with file handling and with foreign-content rules. M4, and it waits on a document rather than on evidence: the memory and file design it has to be written jointly with is not specified anywhere yet.
+3. Whether conversation history from connectors enters long-term memory by default or only by request. Privacy instinct says by request; usefulness says default. M4, settled by watching the actual audience, and the rules do not shortcut it: founding constraint 3 governs what leaves the machine, while this is a question about what the machine takes in locally.

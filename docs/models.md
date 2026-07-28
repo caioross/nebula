@@ -47,7 +47,7 @@ The orchestrator builds every model context from tagged spans: `user` (the perso
 
 ## Runtime
 
-Local inference runs on an embedded engine linked into the binary — llama.cpp-family via FFI or a Rust-native runtime; the choice is deliberately deferred to an M2 spike with published benchmarks, and recorded as an ADR when made ([ADR-0004 placeholder](decisions/0004-inference-runtime.md)). The abstraction the rest of Nebula sees is fixed now: engines take tagged-span contexts and return token streams with cancellation; everything else is the orchestrator's internal affair. GPU use is automatic where drivers allow, with CPU fallback that must remain genuinely usable for the Everyday tier.
+Local inference runs on an embedded engine linked into the binary — llama.cpp-family via FFI or a Rust-native runtime; the choice is deliberately deferred to an M2 spike with published benchmarks, and [ADR-0004](decisions/0004-inference-runtime.md) stays open until that spike reports. The abstraction the rest of Nebula sees is fixed now: engines take tagged-span contexts and return token streams with cancellation; everything else is the orchestrator's internal affair. GPU use is automatic where drivers allow, with CPU fallback that must remain genuinely usable for the Everyday tier.
 
 ## Open questions
 

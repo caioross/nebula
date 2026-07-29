@@ -16,7 +16,7 @@ Exit condition: the interface spec is implemented to the letter; input latency u
 
 ## M2 — Understanding
 
-The intent router. Address detection, command lexicon, language detection, and the small local classifier that separates "open this", "do this" and "answer this". Bundled model runtime with one small and one mid-size model, downloaded and verified on first run, selected automatically per request.
+The intent router. Address detection, command lexicon, language detection, and the small local classifier that separates "open this", "do this" and "answer this". The bundled fleet arrives alongside it: all three tiers, downloaded and verified on first run and selected automatically per request, the two larger ones sized to what the machine can hold. Which engine runs them is settled in this phase as well, by the benchmark spike that [ADR-0004](docs/decisions/0004-inference-runtime.md) waits on.
 
 Exit condition: router decisions under 50 ms for the deterministic path; measured routing accuracy above 95% on the published evaluation set; the machine works with the network cable unplugged.
 

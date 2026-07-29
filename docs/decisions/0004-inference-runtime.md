@@ -8,7 +8,7 @@ Every local model in the fleet ([models.md](../models.md)) runs on an embedded i
 
 ## What the decision needs
 
-Numbers, not vibes. The M2 spike benchmarks the shortlist on the actual bundled models across representative hardware (an 8 GB no-GPU laptop, a mid-range machine with modest VRAM, an Apple Silicon machine), measuring tokens per second, time to first token, memory footprint at rest and under load, and cold-load time for the Everyday tier. It also weighs the non-benchmark facts: quantization format coverage, maintenance velocity, and the cost of carrying a C++ dependency versus betting on younger Rust kernels.
+Numbers, not vibes. The M2 spike benchmarks the shortlist on the actual bundled models across representative hardware (an 8 GB no-GPU laptop, a mid-range machine with modest VRAM, an Apple Silicon machine), measuring tokens per second, time to first token, memory footprint at rest and under load, and cold-load time for the Everyday tier. CPU embedding latency on the 8 GB machine is measured alongside them. [models.md](../models.md) hangs its embedding question on that number, and a runtime that cannot produce embeddings at all rules itself out of that question before any benchmark runs. It also weighs the non-benchmark facts: quantization format coverage, maintenance velocity, and the cost of carrying a C++ dependency versus betting on younger Rust kernels.
 
 ## Constraint fixed in advance
 

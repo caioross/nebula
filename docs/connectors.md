@@ -16,7 +16,7 @@ Every connector implements the same internal trait against the spine:
 - **Receive** — inbound events normalized to a common shape (sender, conversation, body, attachments, timestamps) and published to the spine. The canvas decides presentation; connectors never draw.
 - **Send** — outbound actions accepted only through the spine's confirmed-action path. Anything leaving the machine through a connector is externally visible by definition, so every send confirms first under the same discipline as page actions ([web-engine.md](web-engine.md#reading-without-obeying), layer 2); foreign content in the conversation only adds a second reason to.
 - **Health** — a connector knows its own state (connected, degraded, expired) and reports transitions as plain sentences, at most once per transition. "Your WhatsApp session expired — say 'reconnect WhatsApp' when you want it back."
-- **Remove** — erasure on request, complete: session keys, message cache, everything, journaled as erased.
+- **Remove** — erasure on request, complete: session keys, the bridged conversations in the vault's `conversations/`, everything, journaled as erased. The request is what makes it a removal: a session going `expired` is the network failing, and it erases nothing.
 
 Isolation: connectors are the architecture's leading candidate for out-of-process sandboxing (open question 2 in [architecture.md](architecture.md#open-questions)) since they speak to hostile networks with long-lived credentials.
 

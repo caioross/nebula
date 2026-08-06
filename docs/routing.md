@@ -29,9 +29,11 @@ Pure functions, no models, exhaustively unit-tested:
 
 - **Destination shapes.** Bare domains (`github.com`), full URLs, `localhost:3000`, IP literals, and "shaped like a domain with a typo" (`githbu.com`) which routes to Navigate with a written correction offer rather than a search guess.
 - **The command lexicon.** A closed, versioned vocabulary of operational verbs in every shipped language — close, stop, back, darker, louder, forget, connect, disconnect — matched against short inputs (≤ 6 words) with strict patterns. The lexicon is data (`router/lexicon/*.toml` eventually), reviewed like code, because it *is* the settings surface of the product.
-- **Hard signals.** Provider key formats (`sk-...` and friends) route to the credential flow and are masked from that moment; quoted reply-to-message patterns route to Message when a conversation context is active.
+- **Hard signals.** Provider key formats (`sk-...` and friends) are masked where they sit, before journaling and before any model sees the input. Whether the input is *asking* to connect a provider is a separate judgment, and only that one routes to the credential flow; quoted reply-to-message patterns route to Message when a conversation context is active.
 
 Anything Stage 1 resolves never touches a model. Measured expectation: a majority of real-world inputs end here (navigations and short commands dominate actual usage of such fields).
+
+Masking and routing are separate judgments on purpose. Recognizing a key is a question about the substring; wanting to connect one is a question about the sentence, and the two come apart in both directions. "Why does sk-proj-... keep getting rejected" is a support question, and offering to connect a provider is the wrong answer to it. "Put this in the deploy config: sk-..." is a Task, and the guarantee [models.md](models.md#connected-providers) makes (never in history, model context or logs) has to hold there too, or a key reaches a remote engine because the user asked why it was failing. So the recognizer runs first and unconditionally, which is how [architecture.md](architecture.md#vault) rule 1 already states it, and the classifier only ever sees an input with the span gone. A key that arrives inside `foreign` content, in a page or an incoming message, is masked by the same pass and never reaches the credential flow. Which provider to connect is the user's sentence to write.
 
 ### Stage 2 — Classification (small local model, target < 30 ms)
 
